@@ -29,7 +29,7 @@ export default function Menu() {
           <ul>
             <li><a href="/">Home</a></li>   
             <li><a href="/hello">Hello World</a></li>         
-            <li><a href="/environments">Environments</a></li>
+            <li><a href="/environments">Environment</a></li>
             <li><a href="/salim">Salims side</a></li>
             <li><a href="/sigbjorn">Sigbjørns side</a></li>
             <hr />

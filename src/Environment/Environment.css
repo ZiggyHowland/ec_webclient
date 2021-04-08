@@ -1,0 +1,11 @@
+#envKey {
+    color: blue;
+}
+
+.envValue {
+    color: black;
+}
+
+#envBackground {
+    background-color: #007272;
+}
