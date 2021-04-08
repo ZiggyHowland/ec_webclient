@@ -10,6 +10,12 @@ class RestClient {
         return this.doGet_v2(url, "")
     }
 
+    static getAllUsers() {
+        const url = `${RestClient.baseUrl}/users/all`;
+        //const url = 'http://localhost:8111/users/all';
+        return this.doGet_v2(url, "");
+    }
+
     static getAllEnvironments() {
         const url = `${RestClient.baseUrl}/environments/all`;
         //const url = 'http://localhost:8111/environments/all';
@@ -30,7 +36,7 @@ class RestClient {
 
     static helloWorld(name, token) {
         const url = `${RestClient.baseUrl}/user/hello?name=${name}`;
-        return this.doGet_v2(url, token)
+        return this.doGet_v3(url, token, "text");
     }
     
     static updateDescription(id, environmentToUpdate, token) {
@@ -80,6 +86,26 @@ class RestClient {
         return await response.json();
     }
 
+    static async doGet_v3(url, token, returnType = "json") {    
+        const response = await fetch(
+            url,
+            {
+                method: "GET",
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authentication': token,
+                },
+            }
+        );
+        switch (returnType) {
+            case "text":
+                return await response.text();
+                break;  
+            default:
+                return await response.json();
+        }
+        
+    }
 
     // CREATE/INSERT (Crud)
     static async doPost(url, objectToInsert, token) {
