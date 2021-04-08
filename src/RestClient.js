@@ -5,9 +5,12 @@ class RestClient {
 
 
     static getAllConfigurations() {
-        const url = `${RestClient.baseUrl}/configurations/all`;
+        //const url = `${RestClient.baseUrl}/configurations/all`;
+        const url = 'http://localhost:8111/configurations/all';
         return this.doGet_v2(url, "")
     }
+
+    
 
     static loginAdmin(username, password) {
         const url = `${RestClient.baseUrl}/user/login?user=${username}&password=${password}`;

@@ -24,6 +24,7 @@ export default function Menu() {
     return (
         <nav>
           <ul>
+              <li> Hei</li>
             <li><a href="/">Home</a></li>   
             <li><a href="/hello">Hello World</a></li>         
             <li><a href="/petter">Petters side</a></li>
