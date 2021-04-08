@@ -24,7 +24,7 @@ export default function Environment() {
         return (
             <React.Fragment>
                 <EnvironmentDetails {...environment}/>   
-                <AddConfiguration/>
+                {/*<AddConfiguration/>*/}
             </React.Fragment>
         )
     } else return <div>test</div>;
@@ -38,11 +38,11 @@ export default function Environment() {
         )
     }
 
-    function AddConfiguration() {
+    /*function AddConfiguration() {
         return (
         <div>
 			<h2>Add Configuration</h2>
-			<form /*onSubmit={handleSubmit} */>
+			<form /*onSubmit={handleSubmit} >
 				<p>
 					<label htmlFor='id'>ID:  </label>
 					<textarea id='id' rows={1} cols={20}/>
@@ -62,13 +62,13 @@ export default function Environment() {
                 <label htmlFor='modifiedby'>Modified by:  </label>
 					<textarea disabled id='modifiedby' placeholder="username" rows={1} cols={20}/>
 				<p>    
-					<label>&nbsp;</label> {/* Placeholder */}
+					<label>&nbsp;</label> //Placeholder
 					<button>Add configuration</button>
 				</p>
 			</form>
 		</div>
-        )
-    }
+        ) 
+    } */
 
 
 
