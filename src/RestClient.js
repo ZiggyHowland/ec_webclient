@@ -10,6 +10,12 @@ class RestClient {
         return this.doGet_v2(url, "")
     }
 
+    static getAllUsers() {
+        const url = `${RestClient.baseUrl}/users/all`;
+        //const url = 'http://localhost:8111/users/all';
+        return this.doGet_v2(url, "");
+    }
+
     static getAllEnvironments() {
         const url = `${RestClient.baseUrl}/environments/all`;
         //const url = 'http://localhost:8111/environments/all';
