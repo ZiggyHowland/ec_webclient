@@ -15,6 +15,11 @@ class RestClient {
         //const url = 'http://localhost:8111/environments/all';
         return this.doGet_v2(url, "");
     }
+
+    static getEnvironmentById(id) {
+        const url = `${RestClient.baseUrl}/${id}`;
+        return this.doGet_v2(url, "");
+    }
     
 
     static loginAdmin(username, password) {
