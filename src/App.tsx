@@ -5,6 +5,7 @@ import { Switch, Route } from 'react-router-dom';
 import Header from './Header/Header';
 import Menu from './Menu/Menu';
 import Welcome from './Welcome/Welcome';
+import TestHello from './Tests/TestHello';
 import TestSigbjorn from './Tests/TestSigbjorn';
 import TestSalim from './Tests/TestSalim';
 import TestPetter from './Tests/TestPetter';
@@ -23,6 +24,10 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Welcome />
+          </Route>
+
+          <Route path="/hello">
+            <TestHello />            
           </Route>
 
           <Route path="/sigbjorn">
