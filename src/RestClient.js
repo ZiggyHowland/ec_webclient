@@ -10,6 +10,11 @@ class RestClient {
         return this.doGet_v2(url, "")
     }
 
+    static getAllEnvironments() {
+        const url = `${RestClient.baseUrl}/environments/all`;
+        //const url = 'http://localhost:8111/environments/all';
+        return this.doGet_v2(url, "");
+    }
     
 
     static loginAdmin(username, password) {
@@ -30,8 +35,6 @@ class RestClient {
 
 
     // ----- Examples ---------------------------------
-
-
     static getAllExample() {
         const url = `${RestClient.baseUrl}/your-url`;
         return this.doGet_v2(url);
