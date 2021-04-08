@@ -8,9 +8,8 @@ export default function TestHello() {
     const messageFromServer = () => {
         RestClient.helloWorld("Petter", sessionStorage.getItem("admin-token"))
             .then( 
-                message => setMessage(message)
-
-            )
+                message => setMessage(message))
+            .catch(err => alert(err))
     }
 
     return (
