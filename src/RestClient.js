@@ -5,14 +5,13 @@ class RestClient {
 
 
     static getAllConfigurations() {
-        //const url = `${RestClient.baseUrl}/configurations/all`;
-        const url = 'http://localhost:8111/configurations/all';
+        const url = `${RestClient.baseUrl}/configurations/all`;
+        //const url = 'http://localhost:8111/configurations/all';
         return this.doGet_v2(url, "")
     }
 
     static getAllUsers() {
         const url = `${RestClient.baseUrl}/user/all`;
-        //const url = 'http://localhost:8111/user/all';
         return this.doGet_v2(url, "");
     }
 
