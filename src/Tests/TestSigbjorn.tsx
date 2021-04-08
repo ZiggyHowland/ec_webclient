@@ -15,12 +15,12 @@ export default function TestSigbjorn() {
             <h1>Hello from Sigbjørn</h1>
             This is Sigbjørns page
 
-            <h2>Showing all configurations:</h2>
+            <h2>Showing all configs:</h2>
             <ul>
             {configs.map(
                 ( config: any, i: number ) =>
                     <li key={i}>
-                        {`Config key = ${config.key} : value = ${config.value}`}
+                        {`Key = ${config.key} : Value = ${config.value}`}
                     </li>                
             )}
             </ul>
