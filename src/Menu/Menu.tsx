@@ -41,7 +41,7 @@ export default function Menu() {
 
             <li><a href="/environments">Environment</a></li>
             <li><a href="/salim">Salims side</a></li>
-            <li><a href="/sigbjorn">Sigbjørns side</a></li>
+            <li><a href="/configurations">Configuration</a></li>
             <hr />
             <li><a href="" onClick={login}>Auto login</a></li>
             <li><a href="" onClick={showToken}>Show token</a></li>

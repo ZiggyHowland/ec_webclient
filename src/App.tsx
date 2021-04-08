@@ -10,6 +10,8 @@ import TestSigbjorn from './Tests/TestSigbjorn';
 import TestSalim from './Tests/TestSalim';
 import Environments from './Environment/Environments';
 import Environment from './Environment/Environment';
+import Configuration from './Configuration/Configuration';
+import Configurations from './Configuration/Configurations';
 import Footer from './Footer/Footer';
 
 
@@ -32,8 +34,8 @@ function App() {
             <TestHello />            
           </Route>
 
-          <Route path="/sigbjorn">
-            <TestSigbjorn />            
+          <Route path="/configurations">
+            <Configurations />
           </Route>
 
           <Route path="/salim">

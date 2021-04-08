@@ -12,15 +12,14 @@ export default function Configurations() {
 
     return (
         <div>
-            <h1>Hello from Sigbjørn</h1>
-            This is Sigbjørns page
+            <h1>Configuration</h1>
 
-            <h2>Showing all configs:</h2>
+            <h2>Showing all configurations:</h2>
             <ul>
             {configs.map(
                 ( config: any, i: number ) =>
                     <li key={i}>
-                        {`Key = ${config.key} : Value = ${config.value}`}
+                        {`Key = ${config.key_name} : Value = ${config.value}`}
                     </li>                
             )}
             </ul>
