@@ -8,7 +8,8 @@ import Welcome from './Welcome/Welcome';
 import TestHello from './Tests/TestHello';
 import TestSigbjorn from './Tests/TestSigbjorn';
 import TestSalim from './Tests/TestSalim';
-import TestPetter from './Tests/TestPetter';
+import Environments from './Environment/Environments';
+import Environment from './Environment/Environment';
 
 
 function App() {
@@ -38,8 +39,12 @@ function App() {
             <TestSalim />            
           </Route>
 
-          <Route path="/petter">
-            <TestPetter />            
+          <Route path="/environments">
+            <Environments />            
+          </Route>
+
+          <Route path="/environment/:id">
+            <Environment />            
           </Route>
 
         </Switch>

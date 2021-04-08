@@ -4,8 +4,7 @@ import RestClient from "../RestClient";
 
 export default function Menu() {
 
-    const handleLogin = () => {
-        
+    const login = () => {
         RestClient.loginAdmin("Salim", "pass1")
             .then( (u) => {
                 //localStorage.setItem("admin-user", u.token);
@@ -20,21 +19,23 @@ export default function Menu() {
         alert(u);
     }
 
+    const logout = () => {
+        sessionStorage.removeItem("admin-token");
+    }
+
 
     return (
         <nav>
           <ul>
-              <li> Hei</li>
             <li><a href="/">Home</a></li>   
             <li><a href="/hello">Hello World</a></li>         
-            <li><a href="/petter">Petters side</a></li>
+            <li><a href="/environments">Environment</a></li>
             <li><a href="/salim">Salims side</a></li>
             <li><a href="/sigbjorn">Sigbjørns side</a></li>
             <hr />
-            <li>
-                <a href="" onClick={handleLogin}>Admin login</a>
-            </li>            
-            <li><a href="#" onClick={showToken}>Show token</a></li>
+            <li><a href="" onClick={login}>Auto login</a></li>
+            <li><a href="" onClick={showToken}>Show token</a></li>
+            <li><a href="" onClick={logout}>Auto logout</a></li>
           </ul>
         </nav>  
     )
