@@ -19,6 +19,7 @@ class RestClient {
 
     static loginAdmin(username, password) {
         const url = `${RestClient.baseUrl}/user/login?user=${username}&password=${password}`;
+        // http://localhost:8111/user/login?password=pass1&user=Salim
         return this.doPost(url, null, "");
     }
 
@@ -31,7 +32,6 @@ class RestClient {
         const url = `${RestClient.baseUrl}/environments/updateEnvironmentDescription/${id}`;
         return this.doPut(url, environmentToUpdate, token);
     }
-
 
 
     // ----- Examples ---------------------------------
