@@ -1,5 +1,5 @@
 import React from "react";
-import EnvironmentById from "./Environment";
+import Environment from "./Environment";
 import RestClient from "../RestClient";
 import './Environment.css';
 
@@ -32,7 +32,7 @@ export default function Environments() {
                         </li>
                 )}
             </ul> 
-            {/*<EnvironmentById/> Her kan Environment*/}
+            {/*<Environment/>*/}
         </div>
     )
 }
