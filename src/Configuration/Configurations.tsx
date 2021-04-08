@@ -1,7 +1,7 @@
 import React from "react";
 import RestClient from "../RestClient";
 
-export default function TestSigbjorn() {
+export default function Configurations() {
     let [configs, setConfigs] = React.useState([]);
 
     React.useEffect( () => {
@@ -20,7 +20,7 @@ export default function TestSigbjorn() {
             {configs.map(
                 ( config: any, i: number ) =>
                     <li key={i}>
-                        {`Key = ${config.key_name} : Value = ${config.value}`}
+                        {`Key = ${config.key} : Value = ${config.value}`}
                     </li>                
             )}
             </ul>
