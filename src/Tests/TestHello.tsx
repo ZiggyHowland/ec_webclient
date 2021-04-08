@@ -10,8 +10,9 @@ export default function TestHello() {
         //alert(token);
         RestClient.helloWorld("Salim", token)
             .then(                                 
-                result => {
-                    alert(result)               
+                result => { 
+                    setMessage(result)
+                    //alert(result)               
             })
             .catch(
                 e => alert(e)
