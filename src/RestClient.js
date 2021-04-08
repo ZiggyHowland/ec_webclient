@@ -10,10 +10,16 @@ class RestClient {
         return this.doGet_v2(url, "")
     }
 
+    static getAllEnvironments() {
+        const url = `${RestClient.baseUrl}/environments/all`;
+        //const url = 'http://localhost:8111/environments/all';
+        return this.doGet_v2(url, "");
+    }
     
 
     static loginAdmin(username, password) {
         const url = `${RestClient.baseUrl}/user/login?user=${username}&password=${password}`;
+        // http://localhost:8111/user/login?password=pass1&user=Salim
         return this.doPost(url, null, "");
     }
 
@@ -28,10 +34,7 @@ class RestClient {
     }
 
 
-
     // ----- Examples ---------------------------------
-
-
     static getAllExample() {
         const url = `${RestClient.baseUrl}/your-url`;
         return this.doGet_v2(url);

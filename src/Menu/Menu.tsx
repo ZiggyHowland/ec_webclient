@@ -8,7 +8,7 @@ export default function Menu() {
         
         RestClient.loginAdmin("Salim", "pass1")
             .then( (u) => {
-                // localStorage.setItem("admin-user", u.token);
+                //localStorage.setItem("admin-user", u.token);
                 sessionStorage.setItem("admin-token", u.token);
             })
             .catch( (e) => alert("Feil: " + e))
