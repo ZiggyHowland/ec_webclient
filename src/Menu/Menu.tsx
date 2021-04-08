@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import RestClient from "../RestClient";
+import { Anchor } from '@dnb/eufemia/elements'
 
 export default function Menu() {
 
@@ -27,8 +28,17 @@ export default function Menu() {
     return (
         <nav>
           <ul>
-            <li><a href="/">Home</a></li>   
-            <li><a href="/hello">Hello World</a></li>         
+            <li><Anchor href="/">Home</Anchor></li>
+            <li><a
+                title="Opens Hello World test"
+                target="_blank"
+                href="/hello"
+                className="dnb-anchor"
+            >
+                Hello World
+            </a></li>
+
+
             <li><a href="/environments">Environment</a></li>
             <li><a href="/salim">Salims side</a></li>
             <li><a href="/sigbjorn">Sigbjørns side</a></li>
