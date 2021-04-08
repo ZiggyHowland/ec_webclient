@@ -7,14 +7,6 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Style the header */
-header {
-  background-color: #A5E1D2;
-  padding: 30px;
-  text-align: center;
-  font-size: 35px;
-  color: white;
-}
 
 /* Container for flexboxes */
 section {
@@ -46,13 +38,6 @@ article {
   padding: 10px;
 }
 
-/* Style the footer */
-footer {
-  background-color: #777;
-  padding: 10px;
-  text-align: center;
-  color: white;
-}
 
 /* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
 @media (max-width: 600px) {

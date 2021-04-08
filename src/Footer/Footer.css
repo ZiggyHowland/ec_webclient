@@ -1,0 +1,16 @@
+
+/* Style the footer */
+footer {
+    background-color: #14555A;
+    text-align: center;
+    color: white;
+    height: 6rem;
+}
+
+span.logo {
+    line-height: 6rem;
+    font-size: 25px;
+    padding-left: 10px;
+    height: 4rem;
+
+}

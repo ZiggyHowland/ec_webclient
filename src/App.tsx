@@ -10,6 +10,7 @@ import TestSigbjorn from './Tests/TestSigbjorn';
 import TestSalim from './Tests/TestSalim';
 import Environments from './Environment/Environments';
 import Environment from './Environment/Environment';
+import Footer from './Footer/Footer';
 
 
 function App() {
@@ -53,9 +54,7 @@ function App() {
 
         </section>
 
-      <footer>
-        <p>Footer</p>
-      </footer>
+      <Footer />
     </div>
   );
 }
