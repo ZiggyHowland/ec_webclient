@@ -1,5 +1,6 @@
 import React from "react";
 import RestClient from "../RestClient";
+import './TestPetter.css';
 
 export default function TestPetter() {
     let [environments, SetEnvironments] = React.useState([]);
@@ -7,6 +8,7 @@ export default function TestPetter() {
     React.useEffect( () => {
         RestClient.getAllEnvironments()
         .then(environments => SetEnvironments(environments))
+        .catch(err => alert(err))
     }, [])
 
 
