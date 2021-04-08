@@ -10,6 +10,11 @@ class RestClient {
         return this.doGet_v2(url, "")
     }
 
+    static getConfigurationById(id) {
+        const url = `${RestClient.baseUrl}/configurations/${id}`;
+        return this.doGet_v2(url, "");
+    }
+
     static getAllUsers() {
         const url = `${RestClient.baseUrl}/user/all`;
         return this.doGet_v2(url, "");
