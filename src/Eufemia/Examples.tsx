@@ -3,7 +3,11 @@ import {Button} from "@dnb/eufemia/components";
 export default function EufemiaExamples() {
     return (
         <div>
-            <Button text="Basic Button" />
+            <Button text="Knapp" onClick={() => alert("Hei")} />
+
+
+
+
             <Button
                 variant="secondary"
                 text="Secondary Button"

@@ -36,9 +36,14 @@ export default function Menu() {
             <li><Anchor href="/configurations">Configuration</Anchor></li>
             <li><Anchor href="/eufemia/examples">Eufemia examples</Anchor></li>
             <hr />
-            <Button className="login" text="Auto login" onClick={login}/><br/><br/>
-            <Button className="login" text="Show token" onClick={showToken}/><br/><br/>
-            <Button className="login" text="Auto logout" onClick={logout}/>            
+            <span className="token"><Button className="login" text="Auto login" onClick={login}/></span>
+            <span className="token"><Button className="login" text="Show token" onClick={showToken}/></span>
+            <span className="token"><Button className="login" text="Auto logout" onClick={logout}/></span>
+            <hr /> 
+            <li><Anchor href="http://localhost:8111/swagger-ui/" target="_blank">Backend API</Anchor></li>
+            <li><Anchor href="https://github.com/Toendel96/ec_webserver" target="_blank">GitHub: Backend</Anchor></li>
+            <li><Anchor href="https://github.com/ZiggyHowland/ec_webclient" target="_blank">GitHub: Frontend</Anchor></li>
+            
           </ul>
         </nav>  
     )
