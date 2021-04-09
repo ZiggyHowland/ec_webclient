@@ -1,0 +1,17 @@
+.configBox {
+    width: 90%;
+    height: 200px;
+    
+
+
+}
+
+p.box-header {
+    font-weight: var(--font-weight-bold); 
+    font-size: var(--font-size-medium);
+  }
+
+code.dnb-code {
+    font-family: var(--font-family-monospace);
+    font-size: var(--font-size-x-small);
+}
