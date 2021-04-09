@@ -7,7 +7,7 @@ import Menu from './Menu/Menu';
 import Welcome from './Welcome/Welcome';
 import TestHello from './Tests/TestHello';
 import TestSigbjorn from './Tests/TestSigbjorn';
-import TestSalim from './Tests/TestSalim';
+import Users from './User/Users';
 import Environments from './Environment/Environments';
 import Environment from './Environment/Environment';
 import Configuration from './Configuration/Configuration';
@@ -39,8 +39,8 @@ function App() {
             <Configurations />
           </Route>
 
-          <Route path="/salim">
-            <TestSalim />            
+          <Route path="/Salim">
+            <Users />
           </Route>
 
           <Route path="/environments">

@@ -1,8 +1,8 @@
 import React from "react";
 import RestClient from "../RestClient";
-import './TestSalim.css';
+import './Users.css';
 
-export default function TestSalim() {
+export default function Users() {
     let [users, SetUsers] = React.useState([]);
 
     React.useEffect( () => {
@@ -15,8 +15,7 @@ export default function TestSalim() {
 
     return (
         <div>
-            <h1>Hi from Salim/</h1>
-            This is Salims page
+            <h1>Users</h1>
 
             <h2>All users:</h2>
             <ul>
