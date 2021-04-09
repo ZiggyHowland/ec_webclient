@@ -2,7 +2,7 @@ import RestClient from "../RestClient";
 import './ConfigurationBox.css';
 import { getGlobalVariables } from '../environment.js';
 import React, { createRef, useState } from 'react';
-
+import {Button, IconPrimary} from "@dnb/eufemia/components";
 
 export default function ConfigurationBox(props: any) {
     //var date = new Date(configuration.timestamp_modified).toLocaleDateString(getGlobalVariables().date_locale);
@@ -33,7 +33,13 @@ export default function ConfigurationBox(props: any) {
         <div className="configBox" ref={thisElement}>
             <p className="box-header">{`${props.key_name} => ${props.value}`}</p>
             Key name: {props.key_name}<br />
-            Value: {props.value}<br />
+            Value: {props.value} 
+            <Button 
+                className="dnb-anchor"
+                icon={<IconPrimary icon="edit" border />}                
+            >Edit</Button>
+            
+                <br />
             Last changed: {props.timestamp_modified}<br />
             <p>
                 <code className="dnb-code">{JSON.stringify(props)}</code>
