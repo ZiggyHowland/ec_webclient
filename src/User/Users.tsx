@@ -24,9 +24,9 @@ export default function Users() {
                     (user: any, i:number ) =>
                         <li key={i}>
                             {/* <div className="envKey">{`Key = ${user.id}`}  */}
-                            <a id="envKey" href={`/user/${user.id}`}>{user.id}</a>                            <div className="envValue">{`Value = ${user.username}, ${user.password}, ${user.user_type}, ${user.token}`}</div>
+                            <a id="envKey" href={`/user/${user.id}`}>{user.id}</a>                            <div className="envValue">{`Value = ${user.id}, ${user.username}, ${user.password}, ${user.user_type}`}</div>
                              {/* </div> */}
-                             <div className="envValue">{`Value = ${user.short_name}, ${user.description}`}</div>
+                             <div className="envValue">{`Value = ${user.id}, ${user.description}`}</div>
                              {/*`Key = ${user.id} : Value = ${user.short_name}, ${user.description}` */}
                         </li>
                 )}

@@ -8,7 +8,7 @@ import { useHistory } from "react-router-dom";
 
 export default function Environments() {
     let [environments, SetEnvironments] = React.useState([]);
-    const thisElement = createRef<HTMLDivElement>();
+    //const thisElement = createRef<HTMLDivElement>();
     const history = useHistory();
 
     React.useEffect( () => {
@@ -47,14 +47,14 @@ export default function Environments() {
             <ul>
                 {environments.map(
                     (environment: any, i:number ) =>
-                    <div ref={thisElement} key={i}>
-                        <li /*key={i}*/>
+                    //<div ref={thisElement} key={i}>
+                        <li key={i}>
                             {/* <div className="envKey">{`Key = ${environment.id}`}  */}
-                            <a id="envKey" href={`/environment/${environment.id}`}>{environment.id}</a>
+                            {/*<a id="envKey" href={`/environment/${environment.id}`}>{environment.id}</a> */ }
                             {/* </div> */}
-                            <div className="envValue"> {`Value = ${environment.short_name}, ${environment.description}`} <button className="envButtonDelete" onClick={deleteEnvironment(environment)}>Delete environment</button></div>
+                            <div className="envValue"><a id="envKey" href={`/environment/${environment.id}`}>{environment.id}</a> {`Name = ${environment.short_name}, description = ${environment.description}`} <button className="envButtonDelete" onClick={deleteEnvironment(environment)}>Delete environment</button></div>
                              {/*`Key = ${environment.id} : Value = ${environment.short_name}, ${environment.description}` */}
-                        </li> </div >
+                        </li> //</div >
                 )}
             </ul> 
             {/*<Environment/>*/}
