@@ -9,6 +9,11 @@ import ConfigurationBox from "../Configuration/ConfigurationBox";
 export default function Environment() {
     let [environment, SetEnvironment] = React.useState(null);
     let [configurations, SetConfigurations] = React.useState([]);
+
+    const UpdateEnvironment = (/*id*/) : any => {
+        //href={`/environments/deleteEnvironment/${id}`;}
+    }
+
     //let [environment, SetEnvironment] = React.useState<any>(undefined)
 
     let { id } : any = useParams();
@@ -43,8 +48,9 @@ export default function Environment() {
     function EnvironmentDetails(environment : any) {
         return (
             <div>
-                <h1>{`${environment.id} ${environment.short_name} ${environment.description}`}</h1> 
+                <h1>{`${environment.id} ${environment.short_name} ${environment.description}`}<button className="envButtonUpdate" onClick={UpdateEnvironment(/*environment.id*/)}>Update environment</button></h1>
                 <div>{JSON.stringify(environment)}</div>
+        
             </div>
         )
     }

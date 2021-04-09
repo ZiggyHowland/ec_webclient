@@ -45,9 +45,10 @@ class RestClient {
         return this.doGet_v2(url, "");
     }
 
-    static deleteEnvironmentById(id) {
-        const url = `${RestClient.baseUrl}/environments/deleteEnvironment/${id}`;
-        return this.doGet_v2(url, "");
+    static deleteEnvironmentById(id, token) {
+        //const url = `${RestClient.baseUrl}/environments/deleteEnvironment/${id}`;
+        //return this.doDelete(url, "");
+        return this.doDelete_v2(`/environments/deleteEnvironment/${id}`);
     }
 
     static loginAdmin(username, password) {
