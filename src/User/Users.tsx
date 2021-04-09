@@ -15,8 +15,7 @@ export default function Users() {
 
     return (
         <div>
-            <h1>Hi from Salim/</h1>
-            This is Salims page
+            <h1>Users</h1>
 
             <h2>All users:</h2>
             <ul>
