@@ -1,5 +1,5 @@
 import React from "react";
-import User from "./User";
+import User from "./Users";
 import RestClient from "../RestClient";
 import './Users.css';
 
