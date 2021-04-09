@@ -11,5 +11,46 @@
 }
 
 .cBox {
-    margin-left: 1000px;
+    margin-left: 0px;
+    margin-right: 0px;
 }
+
+.envButtonAdd {
+ background-color: lightgreen;
+ margin: auto;
+ position: relative;
+ left: 45%;
+}
+
+.envButtonAdd:hover { 
+    background-color: lime;
+}
+
+.envButtonDelete {
+    background-color: lightcoral;
+    margin-left: 30px;
+    padding-left: 5px;
+    padding-right: 5px;
+    transition-duration: 0.4s;
+    /*cursor: not-allowed; */
+    opacity: 0.9;
+}
+
+.envButtonDelete:hover {
+    background-color: red;
+}
+
+/*.container { 
+    height: 10px;
+    position: relative;
+    border: 3px solid green; 
+  } */
+  
+  .center {
+    /*margin: 0; 
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); */ 
+  }

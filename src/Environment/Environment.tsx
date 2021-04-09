@@ -28,7 +28,10 @@ export default function Environment() {
 
     if (environment) {
         return (
+        
             <React.Fragment>
+                <h1>Environment</h1>
+                <h2>All environments</h2>
                 <EnvironmentDetails {...environment}/>
                 {configurations.map(
                     (configuration: any, i:number ) => 

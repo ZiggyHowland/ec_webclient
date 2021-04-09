@@ -39,7 +39,7 @@ function App() {
             <Configurations />
           </Route>
 
-          <Route path="/Salim">
+          <Route path="/users">
             <Users />
           </Route>
 
