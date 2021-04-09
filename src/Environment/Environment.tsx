@@ -32,7 +32,7 @@ export default function Environment() {
                 <EnvironmentDetails {...environment}/>
                 {configurations.map(
                     (configuration: any, i:number ) => 
-                <ConfigurationBox {...configuration}/> )}
+                <div className="cBox"><ConfigurationBox {...configuration}/> </div>)}
             </React.Fragment>
         )
     } else return <div>test</div>;
