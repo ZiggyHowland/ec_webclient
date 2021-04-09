@@ -66,29 +66,6 @@ class RestClient {
         const url = `${RestClient.baseUrl}/environments/updateEnvironmentDescription/${id}`;
         return this.doPut(url, environmentToUpdate, token);
     }
-
-
-    // ----- Examples ---------------------------------
-    static getAllExample() {
-        const url = `${RestClient.baseUrl}/your-url`;
-        return this.doGet_v2(url);
-    }
-
-    static getByIdExample(id) {
-        const url = `${RestClient.baseUrl}/your-url/${id}`;
-        return this.doGet_v2(url);
-    }
-
-    static addExample(id, newObject) {
-        const url = `${RestClient.baseUrl}/your-url/${id}`;
-        return this.doPost(url, newObject);
-    }
-
-    static deleteByIdExample(id) {
-        const url = `${RestClient.baseUrl}/your-url/${id}`;
-        return this.doDelete(url);
-    }
-
     
 
     // ------- Default "runners" against server -------------------------------

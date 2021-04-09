@@ -42,15 +42,15 @@ export default function ConfigurationBox(props: any) {
         var newValue = prompt("Please enter new value", configuration.value)
         if (newValue) {
             let objectToUpdate = {
-                key_name: newValue,
-                value: configuration.value 
+                id: configuration.id,
+                key_name: configuration.key_name,
+                value: newValue 
             }
 
             RestClient.updateConfiguration(configuration.id, objectToUpdate, undefined)
-                .then( () => {
-                    //alert(e);
-                    //e.target.reset();
-                    alert("Updated successfully");
+                .then( () => {                                   
+                    window.location.reload(false);
+                    //alert("Updated successfully");
                 })
                 .catch( (err) => alert(err))
 
