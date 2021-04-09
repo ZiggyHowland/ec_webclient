@@ -32,7 +32,7 @@ export default function Menu() {
             <li><Anchor href="/">Home</Anchor></li>
             <li><Anchor href="/hello">Hello World</Anchor></li>
             <li><Anchor href="/environments">Environment</Anchor></li>
-            <li><Anchor href="/salim">Salims side</Anchor></li>
+            <li><Anchor href="/users">User</Anchor></li>
             <li><Anchor href="/configurations">Configuration</Anchor></li>
             <li><Anchor href="/eufemia/examples">Eufemia examples</Anchor></li>
             <hr />
