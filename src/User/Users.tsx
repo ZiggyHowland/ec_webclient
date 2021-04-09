@@ -1,4 +1,5 @@
 import React from "react";
+import User from "./User";
 import RestClient from "../RestClient";
 import './Users.css';
 
@@ -14,7 +15,7 @@ export default function Users() {
 
 
     return (
-        <div>
+        <div id="envBackground">
             <h1>Users</h1>
 
             <h2>All users:</h2>
@@ -22,12 +23,15 @@ export default function Users() {
                 {users.map(
                     (user: any, i:number ) =>
                         <li key={i}>
-                            <div className="envKey">{`Key = ${user.id}`}</div>
-                            <div className="envValue">{`Value = ${user.username}, ${user.password}, ${user.user_type}, ${user.token}`}</div>
-                             {/*`Key = ${user.id} : Value = ${user.username}, ${user.password}, ${user.user_type}, ${user.token} ` */}
+                            {/* <div className="envKey">{`Key = ${user.id}`}  */}
+                            <a id="envKey" href={`/user/${user.id}`}>{user.id}</a>                            <div className="envValue">{`Value = ${user.username}, ${user.password}, ${user.user_type}, ${user.token}`}</div>
+                             {/* </div> */}
+                             <div className="envValue">{`Value = ${user.short_name}, ${user.description}`}</div>
+                             {/*`Key = ${user.id} : Value = ${user.short_name}, ${user.description}` */}
                         </li>
                 )}
             </ul>
+          {/*<User/>*/}  
         </div>
     )
 }
