@@ -2,6 +2,7 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import RestClient from "../RestClient";
 import { Anchor } from '@dnb/eufemia/elements'
+import {Button} from "@dnb/eufemia/components";
 
 export default function Menu() {
 
@@ -29,23 +30,14 @@ export default function Menu() {
         <nav>
           <ul>
             <li><Anchor href="/">Home</Anchor></li>
-            <li><a
-                title="Opens Hello World test"
-                target="_blank"
-                href="/hello"
-                className="dnb-anchor"
-            >
-                Hello World
-            </a></li>
-
-
-            <li><a href="/environments">Environment</a></li>
-            <li><a href="/salim">Salims side</a></li>
-            <li><a href="/configurations">Configuration</a></li>
+            <li><Anchor href="/hello">Hello World</Anchor></li>
+            <li><Anchor href="/environments">Environment</Anchor></li>
+            <li><Anchor href="/salim">Salims side</Anchor></li>
+            <li><Anchor href="/configurations">Configuration</Anchor></li>
             <hr />
-            <li><a href="" onClick={login}>Auto login</a></li>
-            <li><a href="" onClick={showToken}>Show token</a></li>
-            <li><a href="" onClick={logout}>Auto logout</a></li>
+            <Button className="login" text="Auto login" onClick={login}/><br/><br/>
+            <Button className="login" text="Show token" onClick={showToken}/><br/><br/>
+            <Button className="login" text="Auto logout" onClick={logout}/>            
           </ul>
         </nav>  
     )
