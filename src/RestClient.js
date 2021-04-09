@@ -14,6 +14,11 @@ class RestClient {
         return this.doGet_v2(url, "");
     }
 
+    static deleteConfigurationById(id, token) {
+        const route = `/configurations/${id}`;
+        return this.doDelete_v2(route, token);
+    }
+
     static getAllUsers() {
         const url = `${RestClient.baseUrl}/user/all`;
         return this.doGet_v2(url, "");
@@ -156,6 +161,11 @@ class RestClient {
 
 
     // DELETE (cruD)
+    static async doDelete_v2(route, token) {
+        const url = `${RestClient.baseUrl}${route}`;
+        return this.doDelete(url, token);
+    }
+    
     static async doDelete(url, token) {
         const requestOptions = {
             method: 'DELETE',    
