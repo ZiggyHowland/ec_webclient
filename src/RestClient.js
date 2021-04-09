@@ -5,8 +5,7 @@ class RestClient {
 
 
     static getAllConfigurations() {
-        const url = `${RestClient.baseUrl}/configurations/all`;
-        //const url = 'http://localhost:8111/configurations/all';
+        const url = `${RestClient.baseUrl}/configurations`;        
         return this.doGet_v2(url, "")
     }
 
@@ -21,8 +20,7 @@ class RestClient {
     }
 
     static getAllEnvironments() {
-        const url = `${RestClient.baseUrl}/environments/all`;
-        //const url = 'http://localhost:8111/environments/all';
+        const url = `${RestClient.baseUrl}/environments/all`;        
         return this.doGet_v2(url, "");
     }
 

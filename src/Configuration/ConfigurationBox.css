@@ -1,0 +1,24 @@
+.configBox {
+    width: 90%;
+    height: 250px;
+    background-color: hsl(180, 29%, 77%);
+    padding-left: 20px;
+    padding-top: 5px;    
+}
+
+p.box-header {
+    font-weight: var(--font-weight-bold); 
+    font-size: var(--font-size-medium);
+  }
+
+code.dnb-code {
+    font-family: var(--font-family-monospace);
+    font-size: var(--font-size-x-small);
+    width: 90%;
+}
+
+button {
+    position: absolute;
+    align-self: right;
+}
+
