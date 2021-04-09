@@ -20,6 +20,7 @@ export default function Environments() {
     /*const functiona = () => {
     } */
 
+    //This method receives description.id as a parameter
     const deleteEnvironment = ({id}:any) => () => {
         /*const deleteEnvironment = (environment:any) => () => {
             var id = environment.id; */

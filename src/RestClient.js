@@ -58,6 +58,11 @@ class RestClient {
         return this.doDelete_v2(`/environments/deleteEnvironment/${id}`);
     }
 
+    static updateEnvironmentDescription(id, environmentToUpdate, token) {
+        const url = `${RestClient.baseUrl}/environments/updateEnvironmentDescription/${id}`;
+        return this.doPut(url, environmentToUpdate, token);
+    }
+
     static loginAdmin(username, password) {
         const url = `${RestClient.baseUrl}/user/login?user=${username}&password=${password}`;
         // http://localhost:8111/user/login?password=pass1&user=Salim
@@ -67,11 +72,6 @@ class RestClient {
     static helloWorld(name, token) {
         const url = `${RestClient.baseUrl}/user/hello?name=${name}`;
         return this.doGet_v3(url, token, "text");
-    }
-    
-    static updateDescription(id, environmentToUpdate, token) {
-        const url = `${RestClient.baseUrl}/environments/updateEnvironmentDescription/${id}`;
-        return this.doPut(url, environmentToUpdate, token);
     }
     
 

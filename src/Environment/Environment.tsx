@@ -7,20 +7,33 @@ import Configuration from "../Configuration/Configuration";
 import ConfigurationBox from "../Configuration/ConfigurationBox";
 
 export default function Environment() {
+    //let [environment, SetEnvironment] = React.useState<any>(undefined)
     let [environment, SetEnvironment] = React.useState(null);
     let [configurations, SetConfigurations] = React.useState([]);
 
-    const UpdateEnvironment = (/*id*/) : any => {
-        //href={`/environments/deleteEnvironment/${id}`;}
+    //This method receives the hole environment object, and then shows description value
+    const UpdateEnvironment = (environment:any) => () => {
+        var newValue = prompt("Please enter new value", environment.description)
+        if (newValue) {
+            let objectToUpdate = {
+                id: environment.id,
+                short_name: environment.short_name,
+                description: newValue
+            }
+
+            RestClient.updateEnvironmentDescription(environment.id, objectToUpdate, undefined)
+            .then( () => {
+                window.location.reload(false);
+            })
+            .catch((err) => alert(err))
+        }
     }
 
-    //let [environment, SetEnvironment] = React.useState<any>(undefined)
+
 
     let { id } : any = useParams();
+    if (id == null) id = 1;
 
-    if (id == null) {
-        id = 1;
-    }
 
     React.useEffect( () => {
         RestClient.getEnvironmentById(id)
@@ -48,11 +61,23 @@ export default function Environment() {
     function EnvironmentDetails(environment : any) {
         return (
             <div>
-                <h1>{`${environment.id} ${environment.short_name} ${environment.description}`}<button className="envButtonUpdate" onClick={UpdateEnvironment(/*environment.id*/)}>Update environment</button></h1>
+                <h1>{`${environment.id} ${environment.short_name} ${environment.description}`}<button className="envButtonUpdate" onClick={UpdateEnvironment(environment)}>Update environment</button></h1>
                 <div>{JSON.stringify(environment)}</div>
             </div>
         )
     }
+
+
+
+
+
+
+
+
+
+
+
+
 
     /*function AddConfiguration() {
         return (
