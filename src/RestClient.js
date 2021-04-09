@@ -19,8 +19,10 @@ class RestClient {
         return this.doGet_v2(url, "");
     }
 
+    //This has nothing to do with url i browser. This is url to get information from backend (ex Swagger)
+    //Url for browser is defined in App.tsx as <Route>
     static getAllEnvironments() {
-        const url = `${RestClient.baseUrl}/environments/all`;        
+        const url = `${RestClient.baseUrl}/environments/all`;         
         return this.doGet_v2(url, "");
     }
 
@@ -30,7 +32,7 @@ class RestClient {
     }
     
     static getConfigurationByEnvironmentId(environmentId) {
-        const url = `${RestClient.baseUrl}/environments/all/${environmentId}/configurations`;
+        const url = `${RestClient.baseUrl}/environments/${environmentId}/configurations`;
         return this.doGet_v2(url, "");
     }
 
