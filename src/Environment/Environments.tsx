@@ -41,7 +41,7 @@ export default function Environments() {
     return (
         <div id="envBackground">
             <h1>Environment</h1>
-            <h2>All environments</h2>
+            <h2 className="envH2">All environments</h2>
             <button className="envButtonAdd">Add environment</button>
 
             <ul>

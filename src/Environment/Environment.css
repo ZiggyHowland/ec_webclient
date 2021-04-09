@@ -6,6 +6,10 @@
     color: black;
 }
 
+.envH2 {
+    text-align: center;
+}
+
 #envBackground {
     background-color: #007272;
 }
@@ -57,18 +61,3 @@ li .envValue {
 .envButtonUpdate:hover {
     background-color: yellow;
 }
-
-/*.container { 
-    height: 10px;
-    position: relative;
-    border: 3px solid green; 
-  } */
-  
-  .center {
-    /*margin: 0; 
-    position: absolute; 
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%); */ 
-  }

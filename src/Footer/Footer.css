@@ -14,3 +14,20 @@ span.logo {
     height: 4rem;
 
 }
+
+.logo {
+    text-align: center;
+    left: 45%;
+    position: absolute;
+}
+
+.footerwrapper {
+    bottom: 0;
+    position: absolute; 
+    width: 100%; 
+    overflow: hidden;
+    text-align: center;
+    width: 100%;
+    background-color: #007272;
+    /* background-color: #A5E1D2; */
+}

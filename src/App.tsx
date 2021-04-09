@@ -63,11 +63,11 @@ function App() {
 
         </Switch>
         </article>
-        
-
         </section>
 
-      <Footer />
+      <section className="footerwrapper">
+        <Footer />
+      </section>
     </div>
   );
 }
