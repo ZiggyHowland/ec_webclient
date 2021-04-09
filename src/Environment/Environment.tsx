@@ -24,6 +24,9 @@ export default function Environment() {
         return (
             <React.Fragment>
                 <EnvironmentDetails {...environment}/>   
+
+
+
                 {/*<AddConfiguration/>*/}
             </React.Fragment>
         )
