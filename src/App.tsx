@@ -14,6 +14,8 @@ import Configuration from './Configuration/Configuration';
 import Configurations from './Configuration/Configurations';
 import Footer from './Footer/Footer';
 import EufemiaExamples from './Eufemia/Examples';
+import User from './User/User';
+
 
 
 function App() {
@@ -41,6 +43,10 @@ function App() {
 
           <Route path="/users">
             <Users />
+          </Route>
+
+          <Route path="/user/:id">
+            <User/>
           </Route>
 
           <Route path="/environments">

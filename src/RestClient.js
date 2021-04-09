@@ -24,6 +24,13 @@ class RestClient {
         return this.doGet_v2(url, "");
     }
 
+    static getUserById(id) {
+        const url = "http://localhost:8111/user/{id}";
+        return this.doGet_v2(url, "");
+    }
+
+
+
     //This has nothing to do with url i browser. This is url to get information from backend (ex Swagger)
     //Url for browser is defined in App.tsx as <Route>
     static getAllEnvironments() {
