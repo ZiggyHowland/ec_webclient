@@ -13,6 +13,7 @@ import Environment from './Environment/Environment';
 import Configuration from './Configuration/Configuration';
 import Configurations from './Configuration/Configurations';
 import Footer from './Footer/Footer';
+import EufemiaExamples from './Eufemia/Examples';
 
 
 function App() {
@@ -48,6 +49,10 @@ function App() {
 
           <Route path="/environment/:id">
             <Environment />            
+          </Route>
+
+          <Route path="/eufemia/examples">
+            <EufemiaExamples />            
           </Route>
 
         </Switch>

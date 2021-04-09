@@ -34,6 +34,7 @@ export default function Menu() {
             <li><Anchor href="/environments">Environment</Anchor></li>
             <li><Anchor href="/salim">Salims side</Anchor></li>
             <li><Anchor href="/configurations">Configuration</Anchor></li>
+            <li><Anchor href="/eufemia/examples">Eufemia examples</Anchor></li>
             <hr />
             <Button className="login" text="Auto login" onClick={login}/><br/><br/>
             <Button className="login" text="Show token" onClick={showToken}/><br/><br/>
