@@ -4,10 +4,12 @@ import RestClient from "../RestClient";
 import './Environment.css';
 import { Anchor } from '@dnb/eufemia/elements'
 import React, { createRef, useState } from 'react';
+import { useHistory } from "react-router-dom";
 
 export default function Environments() {
     let [environments, SetEnvironments] = React.useState([]);
     const thisElement = createRef<HTMLDivElement>();
+    const history = useHistory();
 
     React.useEffect( () => {
         RestClient.getAllEnvironments()
@@ -25,12 +27,13 @@ export default function Environments() {
         if (window.confirm(msg)) {
             RestClient.deleteEnvironmentById(id, "")
             .then( () => {
-            if (thisElement.current) {
-                thisElement.current.remove()
-            }
+                //history.push("environments"); //Updates URL, but will not refresh
+                window.location.reload(false);
+            /*if (thisElement.current) {
+                thisElement.current.remove();
+            }*/
         })
         .catch( (e)=>alert(e) );
-        //href={`/environments/deleteEnvironment/${id}`;}
     } 
 }
 
