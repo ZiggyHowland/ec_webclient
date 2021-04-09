@@ -36,6 +36,11 @@ class RestClient {
         return this.doGet_v2(url, "");
     }
 
+    static deleteEnvironmentById(id) {
+        const url = `${RestClient.baseUrl}/environments/deleteEnvironment/${id}`;
+        return this.doGet_v2(url, "");
+    }
+
     static loginAdmin(username, password) {
         const url = `${RestClient.baseUrl}/user/login?user=${username}&password=${password}`;
         // http://localhost:8111/user/login?password=pass1&user=Salim
