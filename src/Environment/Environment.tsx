@@ -50,7 +50,6 @@ export default function Environment() {
             <div>
                 <h1>{`${environment.id} ${environment.short_name} ${environment.description}`}<button className="envButtonUpdate" onClick={UpdateEnvironment(/*environment.id*/)}>Update environment</button></h1>
                 <div>{JSON.stringify(environment)}</div>
-        
             </div>
         )
     }

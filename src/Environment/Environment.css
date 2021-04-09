@@ -22,6 +22,11 @@
  left: 45%;
 }
 
+li .envValue {
+    margin-bottom: 7px;
+    margin-top: 7px;
+}
+
 .envButtonAdd:hover { 
     background-color: lime;
 }
