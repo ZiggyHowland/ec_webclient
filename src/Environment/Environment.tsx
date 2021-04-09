@@ -3,9 +3,12 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import './Environment.css';
 import RestClient from "../RestClient";
+import Configuration from "../Configuration/Configuration";
+import ConfigurationBox from "../Configuration/ConfigurationBox";
 
 export default function Environment() {
     let [environment, SetEnvironment] = React.useState(null);
+    let [configurations, SetConfigurations] = React.useState([]);
     //let [environment, SetEnvironment] = React.useState<any>(undefined)
 
     let { id } : any = useParams();
@@ -18,16 +21,18 @@ export default function Environment() {
         RestClient.getEnvironmentById(id)
         .then(e => SetEnvironment(e))
         .catch(err => alert(err))
+        RestClient.getConfigurationByEnvironmentId(id)
+        .then(c => SetConfigurations(c))
+        .catch(err => alert(err)) 
     }, [])
 
     if (environment) {
         return (
             <React.Fragment>
-                <EnvironmentDetails {...environment}/>   
-
-
-
-                {/*<AddConfiguration/>*/}
+                <EnvironmentDetails {...environment}/>
+                {configurations.map(
+                    (configuration: any, i:number ) => 
+                <div className="cBox"><ConfigurationBox {...configuration}/> </div>)}
             </React.Fragment>
         )
     } else return <div>test</div>;
