@@ -14,6 +14,10 @@ class RestClient {
         return this.doGet_v2(url, "");
     }
 
+    static updateConfiguration(id, objectToUpdate, token = "") {
+        return this.doPut_v2(`/configurations/${id}`, objectToUpdate, token)
+    }
+
     static deleteConfigurationById(id, token) {
         const route = `/configurations/${id}`;
         return this.doDelete_v2(route, token);
@@ -148,6 +152,11 @@ class RestClient {
     
 
     // UPDATE (crUd)
+    static async doPut_v2(route, objectToUpdate, token) {
+        const url = `${RestClient.baseUrl}${route}`;
+        return this.doPut(url, objectToUpdate, token);
+    }
+
     static async doPut(url, objectToUpdate, token) {
         const requestOptions = {
             method: 'PUT',

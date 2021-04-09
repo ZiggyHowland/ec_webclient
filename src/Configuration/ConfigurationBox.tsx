@@ -2,7 +2,18 @@ import RestClient from "../RestClient";
 import './ConfigurationBox.css';
 import { getGlobalVariables } from '../environment.js';
 import React, { createRef, useState } from 'react';
-import {Button, IconPrimary} from "@dnb/eufemia/components";
+import { Icon } from "@dnb/eufemia/components";
+
+// Named ES import
+import { edit } from '@dnb/eufemia/icons'
+
+// or named import with modifier
+//import { bell as Bell } from '@dnb/eufemia/icons'
+
+// Default and explicit ES import
+//import Bell from '@dnb/eufemia/icons/bell'
+
+
 
 export default function ConfigurationBox(props: any) {
     //var date = new Date(configuration.timestamp_modified).toLocaleDateString(getGlobalVariables().date_locale);
@@ -26,6 +37,27 @@ export default function ConfigurationBox(props: any) {
         }
     }
 
+
+    const updateDescription = (configuration: any) => () => {
+        var newValue = prompt("Please enter new value", configuration.value)
+        if (newValue) {
+            let objectToUpdate = {
+                key_name: newValue,
+                value: configuration.value 
+            }
+
+            RestClient.updateConfiguration(configuration.id, objectToUpdate, undefined)
+                .then( () => {
+                    //alert(e);
+                    //e.target.reset();
+                    alert("Updated successfully");
+                })
+                .catch( (err) => alert(err))
+
+           
+        }
+    }
+
     
 
 
@@ -33,11 +65,11 @@ export default function ConfigurationBox(props: any) {
         <div className="configBox" ref={thisElement}>
             <p className="box-header">{`${props.key_name} => ${props.value}`}</p>
             Key name: {props.key_name}<br />
-            Value: {props.value} 
-            <Button 
-                className="dnb-anchor"
-                icon={<IconPrimary icon="edit" border />}                
-            >Edit</Button>
+            <span>
+                Value: {props.value}                  
+                <button className="dnb-anchor" onClick={updateDescription(props)}><Icon icon={edit} /> </button>
+            </span>
+      
             
                 <br />
             Last changed: {props.timestamp_modified}<br />
