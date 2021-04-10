@@ -1,7 +1,7 @@
 import RestClient from "../RestClient";
 import './ConfigurationBox.css';
 import { getGlobalVariables } from '../environment.js';
-import React, { useState, Form } from 'react';
+import React, { useState } from 'react';
 import { Icon } from "@dnb/eufemia/components";
 import { Link } from 'react-router-dom';
 import { useForm } from "react-hook-form";

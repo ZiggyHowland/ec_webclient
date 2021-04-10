@@ -16,6 +16,7 @@ import ConfigurationAddEdit from './Configuration/ConfigurationAddEdit';
 import Footer from './Footer/Footer';
 import EufemiaExamples from './Eufemia/Examples';
 import User from './User/User';
+import Login from './Login/Login.jsx';
 
 
 
@@ -35,6 +36,8 @@ function App() {
           <Route exact path="/">
             <Welcome />
           </Route>
+
+          <Route path="/login" component={Login} />
 
           <Route path="/hello">
             <TestHello />            

@@ -40,27 +40,6 @@ export default function ConfigurationBox(props: any) {
     }
 
 
-    const updateDescription = (configuration: any) => () => {
-        var newValue = prompt("Please enter new value", configuration.value)
-        if (newValue) {
-            let objectToUpdate = {
-                id: configuration.id,
-                key_name: configuration.key_name,
-                value: newValue 
-            }
-
-            RestClient.updateConfiguration(configuration.id, objectToUpdate, undefined)
-                .then( () => {                                   
-                    window.location.reload(false);
-                    //alert("Updated successfully");
-                })
-                .catch( (err) => alert(err))
-
-           
-        }
-    }
-    
-
 
     return (
         <div className="configBox" ref={thisElement}>
