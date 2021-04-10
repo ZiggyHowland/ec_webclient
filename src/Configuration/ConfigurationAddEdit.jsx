@@ -1,12 +1,14 @@
 import RestClient from "../RestClient";
 import './ConfigurationBox.css';
 import { getGlobalVariables } from '../environment.js';
-import React, { useState } from 'react';
+import React, { useState, Form } from 'react';
 import { Icon } from "@dnb/eufemia/components";
 import { Link } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
+import { Anchor } from '@dnb/eufemia/elements'
+
 
 
 // Named ES import
@@ -23,9 +25,11 @@ import { edit } from '@dnb/eufemia/icons'
 // Require dependencies: 
 //  https://github.com/jquense/yup ("npm install -S yup")
 //  https://github.com/react-hook-form/react-hook-form ("npm install react-hook-form" + "npm i @hookform/resolvers")
-export default function ConfigurationBox(props) {
+export default function ConfigurationAddEdit(props) {
     var history = props.history;
     var match = props.match;
+    
+
     const { id } = match.params;
     const isAddMode = !id;
 
@@ -50,7 +54,9 @@ export default function ConfigurationBox(props) {
         return RestClient.createConfiguration(data, 2, 2, "")
             .then( () => {
                 alert("Configuration added (PS: Remember environmentId + userId hardcoded.");
-                history.push(".");
+                //history.push(".");
+                history.goBack();
+                
             })
             .catch( (err) => alert("Error added: " + err));
 
@@ -61,7 +67,9 @@ export default function ConfigurationBox(props) {
         return RestClient.updateConfiguration(id, data, "")
             .then( () => {
                 alert("Configuration updated");
-                history.push("..");
+                //history.push("..");
+                history.goBack()
+                
             })      
             .catch((err) => alert("Error updating: " + err))  
     }
@@ -84,29 +92,42 @@ export default function ConfigurationBox(props) {
 
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)} onReset={reset}>
-            <h1>{isAddMode ? 'Add User' : 'Edit User'}</h1>
-            <div className="form-row">            
-                <div className="form-group col-5">
-                    <label>Key name</label>
-                    <input name="key_name" type="text" {...register('key_name')} className={`form-control ${false ? 'is-invalid' : ''}`} />
+        
+            <form class="form-horizontal" onSubmit={handleSubmit(onSubmit)} onReset={reset}>
+                <h1>{isAddMode ? 'Add Configuration' : 'Edit Configuration'}</h1>
+                
+                <div className="form-group">
+                    <label class="control-label col-sm-2" for="key_name">Key name</label>
+                    <div class="col-sm-10">
+                        <input id="key_name" name="key_name" type="text" {...register('key_name')} className={`form-control ${false ? 'is-invalid' : ''}`} />
+                    </div>
                     {/* <div className="invalid-feedback">{errors.key_name?.message}</div> */}
                 </div>
-                <div className="form-group col-5">
-                    <label>Value</label>
-                    <input name="value" type="text" {...register('value')} className={`form-control ${false ? 'is-invalid' : ''}`} />
+
+                <div className="form-group">
+                    <label class="control-label col-sm-2" for="value">Value</label>
+                    <div class="col-sm-10">
+                        <input id="value" name="value" type="text" {...register('value')} className={`form-control ${false ? 'is-invalid' : ''}`} />
+                    </div>
                     {/* <div className="invalid-feedback">{errors.value?.message}</div> */}
                 </div>
-            </div>
+
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button class="dnb-anchor" type="submit" disabled={formState.isSubmitting} >
+                            {formState.isSubmitting && <span className="spinner-border spinner-border-sm mr-1"></span>}
+                            Save
+                        </button>
                         
-            <div className="form-group">
-                <button type="submit" disabled={formState.isSubmitting} className="btn btn-primary">
-                    {formState.isSubmitting && <span className="spinner-border spinner-border-sm mr-1"></span>}
-                    Save
-                </button>
-                <Link to={isAddMode ? '.' : '..'} className="btn btn-link">Cancel</Link>
-            </div>
-        </form>
+                        <button type="button" id="addEditConfigurationCancelButton" class="dnb-anchor" onClick={() => history.goBack()}>Cancel</button>
+
+                        {/* <Anchor id="addEditConfigurationCancelButton" href={}>Cancel</Anchor> */}
+                    </div>
+                </div>
+               
+            </form>
+        
+       
     )
 
 }

@@ -9,16 +9,15 @@ footer {
 
 span.logo {
     line-height: 6rem;
-    font-size: 25px;
-    padding-left: 10px;
+    font-size: 25px;    
     height: 4rem;
 
 }
 
 .logo {
-    text-align: center;
+    /* text-align: center;
     left: 45%;
-    position: absolute;
+    position: absolute; */
 }
 
 .footerwrapper {

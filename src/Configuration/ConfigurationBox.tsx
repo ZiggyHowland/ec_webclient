@@ -64,8 +64,10 @@ export default function ConfigurationBox(props: any) {
 
     return (
         <div className="configBox" ref={thisElement}>
-            <p className="box-header">
-                {`${props.key_name} => ${props.value}`} 
+            <p>
+                <span className="box-header">
+                    {`${props.key_name} => ${props.value}`} 
+                </span>
                 <Anchor href={`/configurations/edit/${props.id}`}>
                     <Icon icon={edit} /> Edit Configuration
                 </Anchor>

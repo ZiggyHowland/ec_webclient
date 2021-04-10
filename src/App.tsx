@@ -1,7 +1,8 @@
 import React from 'react';
 import './App.css';
 import { getGlobalVariables } from './environment.js';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route  } from 'react-router-dom';
+import { Router } from 'react-router';
 import Header from './Header/Header';
 import Menu from './Menu/Menu';
 import Welcome from './Welcome/Welcome';
@@ -11,7 +12,7 @@ import Users from './User/Users';
 import Environments from './Environment/Environments';
 import Environment from './Environment/Environment';
 import Configurations from './Configuration/Configurations';
-import ConfigurationBoxV2 from './Configuration/ConfigurationBoxV2';
+import ConfigurationAddEdit from './Configuration/ConfigurationAddEdit';
 import Footer from './Footer/Footer';
 import EufemiaExamples from './Eufemia/Examples';
 import User from './User/User';
@@ -21,7 +22,9 @@ import User from './User/User';
 function App() {
   {/* Source: https://www.w3schools.com/html/html_layout.asp */}
 
+  
   return (
+
     <div className="App">
       <Header appname={getGlobalVariables().appname} />
       <section>
@@ -38,8 +41,8 @@ function App() {
           </Route>
 
           <Route exact path="/configurations" component={Configurations} />
-          <Route path="/configurations/add" component={ConfigurationBoxV2} />
-          <Route path="/configurations/edit/:id" component={ConfigurationBoxV2} />
+          <Route path="/configurations/add" component={ConfigurationAddEdit} />
+          <Route path="/configurations/edit/:id" component={ConfigurationAddEdit} />
 
           <Route path="/users">
             <Users />
@@ -65,9 +68,9 @@ function App() {
         </article>
         </section>
 
-      <section className="footerwrapper">
+      
         <Footer />
-      </section>
+      
     </div>
   );
 }

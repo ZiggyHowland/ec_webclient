@@ -19,7 +19,7 @@ export default function Configurations() {
 
             <p>
                 <Anchor href="/configurations/add">
-                    <Icon icon={add_circled} /> Edit Configuration
+                    <Icon icon={add_circled} /> Add Configuration
                 </Anchor>
             </p>
 
