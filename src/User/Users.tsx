@@ -22,7 +22,7 @@ export default function Users() {
             <ul>
                 {users.map(
                     (user: any, i:number ) =>
-                        <li key={i}>
+                        <li key={i} className="li-frame">
                             {/* <div className="envKey">{`Key = ${user.id}`}  */}
                             <a id="envKey" href={`/user/${user.id}`}>{user.id}</a>                            <div className="envValue">{`Value = ${user.id}, ${user.username}, ${user.password}, ${user.user_type}`}</div>
                              {/* </div> */}

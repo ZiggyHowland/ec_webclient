@@ -1,3 +1,4 @@
+import { object } from "yup/lib/locale";
 import { getGlobalVariables } from "./environment.js"
 
 class RestClient {
@@ -12,6 +13,11 @@ class RestClient {
     static getConfigurationById(id) {
         const url = `${RestClient.baseUrl}/configurations/${id}`;
         return this.doGet_v2(url, "");
+    }
+
+    static createConfiguration(objectToInsert, environmentId, userId, token = "") {
+        var route = `/configurations?environmentId=${environmentId}&userId=${userId}`;
+        return this.doPost_v2(route, objectToInsert, token);
     }
 
     static updateConfiguration(id, objectToUpdate, token = "") {
@@ -115,6 +121,10 @@ class RestClient {
     }
 
     // CREATE/INSERT (Crud)
+    static async doPost_v2(route, objectToInsert, token) {
+        return this.doPost(`${RestClient.baseUrl}${route}`, objectToInsert, token)
+    }
+
     static async doPost(url, objectToInsert, token) {
         const response = await fetch(
             url, 

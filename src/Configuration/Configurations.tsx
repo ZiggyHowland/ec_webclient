@@ -1,8 +1,9 @@
 import RestClient from "../RestClient";
 import ConfigurationBox from "./ConfigurationBox";
-import React, { useState } from 'react';
-
-
+import React from 'react';
+import { Anchor } from '@dnb/eufemia/elements'
+import { Icon } from "@dnb/eufemia/components";
+import { add_circled } from '@dnb/eufemia/icons'
 
 export default function Configurations() {
     let [configs, setConfigs] = React.useState([]);
@@ -14,15 +15,18 @@ export default function Configurations() {
     
     return (
         <div>
-            <h1>Configuration</h1>
+            <h2>All configurations:</h2>
 
-            <h2>Showing all configurations:</h2>
-            <ul>
+            <p>
+                <Anchor href="/configurations/add">
+                    <Icon icon={add_circled} /> Edit Configuration
+                </Anchor>
+            </p>
+
             {configs.map(
                 ( config: any, i: number ) =>
                     <ConfigurationBox key={i} {...config} />         
             )}
-            </ul>
         </div>
     )
 }

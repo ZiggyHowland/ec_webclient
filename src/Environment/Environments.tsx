@@ -49,7 +49,7 @@ export default function Environments() {
                 {environments.map(
                     (environment: any, i:number ) =>
                     //<div ref={thisElement} key={i}>
-                        <li key={i}>
+                        <li key={i} className="li-frame">
                             {/* <div className="envKey">{`Key = ${environment.id}`}  */}
                             {/*<a id="envKey" href={`/environment/${environment.id}`}>{environment.id}</a> */ }
                             {/* </div> */}

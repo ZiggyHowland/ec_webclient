@@ -2,16 +2,18 @@ import RestClient from "../RestClient";
 import './ConfigurationBox.css';
 import { getGlobalVariables } from '../environment.js';
 import React, { createRef, useState } from 'react';
-import { Icon } from "@dnb/eufemia/components";
-
-// Named ES import
-import { edit } from '@dnb/eufemia/icons'
+import {  Icon } from "@dnb/eufemia/components";
+import { Anchor } from '@dnb/eufemia/elements'
+import { edit } from '@dnb/eufemia/icons' // Named ES import
 
 // or named import with modifier
 //import { bell as Bell } from '@dnb/eufemia/icons'
 
 // Default and explicit ES import
 //import Bell from '@dnb/eufemia/icons/bell'
+
+// Icons-library: https://unpkg.com/browse/@dnb/eufemia@9.1.5/assets/icons/
+
 
 
 
@@ -57,17 +59,21 @@ export default function ConfigurationBox(props: any) {
            
         }
     }
-
     
 
 
     return (
         <div className="configBox" ref={thisElement}>
-            <p className="box-header">{`${props.key_name} => ${props.value}`}</p>
+            <p className="box-header">
+                {`${props.key_name} => ${props.value}`} 
+                <Anchor href={`/configurations/edit/${props.id}`}>
+                    <Icon icon={edit} /> Edit Configuration
+                </Anchor>
+            </p>
             Key name: {props.key_name}<br />
             <span>
                 Value: {props.value}                  
-                <button className="dnb-anchor" onClick={updateDescription(props)}><Icon icon={edit} /> </button>
+                
             </span>
       
             

@@ -10,8 +10,8 @@ import TestSigbjorn from './Tests/TestSigbjorn';
 import Users from './User/Users';
 import Environments from './Environment/Environments';
 import Environment from './Environment/Environment';
-import Configuration from './Configuration/Configuration';
 import Configurations from './Configuration/Configurations';
+import ConfigurationBoxV2 from './Configuration/ConfigurationBoxV2';
 import Footer from './Footer/Footer';
 import EufemiaExamples from './Eufemia/Examples';
 import User from './User/User';
@@ -37,9 +37,9 @@ function App() {
             <TestHello />            
           </Route>
 
-          <Route path="/configurations">
-            <Configurations />
-          </Route>
+          <Route exact path="/configurations" component={Configurations} />
+          <Route path="/configurations/add" component={ConfigurationBoxV2} />
+          <Route path="/configurations/edit/:id" component={ConfigurationBoxV2} />
 
           <Route path="/users">
             <Users />

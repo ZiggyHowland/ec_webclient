@@ -48,9 +48,9 @@ export default function Environment() {
         return (
         
             <React.Fragment>
-                <h1>Environment</h1>
-                <h2>All environments</h2>
+                <h1>Environment page:</h1>                
                 <EnvironmentDetails {...environment}/>
+                <h1>Configurations for this environment</h1>
                 {configurations.map(
                     (configuration: any, i:number ) => 
                 <div className="cBox"><ConfigurationBox {...configuration}/> </div>)}
