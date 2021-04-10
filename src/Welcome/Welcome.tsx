@@ -1,10 +1,15 @@
-
+import sps from './sps.png';
+import './Welcome.css';
 
 export default function Welcome() {
     return (
-        <div>
-            <h1>Welcome</h1>
-            <p>This is our welcome page. We will add summary of environments, configurations and users/admins here.</p>
+        <div className="welcomeDiv">
+            <h1>Group SPS</h1>
+            <p>
+                Salim, Petter and Sigbjørn
+            </p>
+            <img src={sps} className="sps" />
+            <h2>Summary</h2>
             
         </div>
     )
