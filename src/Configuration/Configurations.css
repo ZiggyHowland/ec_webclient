@@ -1,0 +1,8 @@
+.listHeader {
+    display: block;
+    clear: both;
+}
+
+.listHeader .configFilter {
+    float: right;
+}

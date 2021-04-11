@@ -15,6 +15,11 @@ class RestClient {
         return this.doGet_v2(url, "")
     }
 
+    static getAllConfigurationsFilteredByDate(modifiedDate) {
+        var route = `/configurations?modifiedAfterDate=${modifiedDate}`;
+        return this.doGet_v4(route, "");
+    }
+
     static getConfigurationById(id) {
         const url = `${RestClient.baseUrl}/configurations/${id}`;
         return this.doGet_v2(url, "");

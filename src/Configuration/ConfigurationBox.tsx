@@ -71,8 +71,3 @@ export default function ConfigurationBox(props: any) {
     )
 
 }
-
-function useForceUpdate() {
-    const [value, setValue] = useState(0);
-    return
-}
