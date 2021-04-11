@@ -14,8 +14,9 @@ export default function Menu() {
             <li><Anchor href="/">Home</Anchor></li>            
             <li><Anchor href="/environments">Environments</Anchor></li>            
             <li><Anchor href="/configurations">Configurations</Anchor></li>
-            <li><Anchor href="/users">User</Anchor></li>
+            <li><Anchor href="/users">Users</Anchor></li>
             <li><Anchor href="/login">{isLoggedIn ? "Log out" : "Log in"}</Anchor></li>
+            <li><Anchor href="/about">About</Anchor></li>
             <hr /> 
             <li><Anchor href="/hello">Hello World (token)</Anchor></li>
             <li><Anchor href="/eufemia/examples">Eufemia examples</Anchor></li>            

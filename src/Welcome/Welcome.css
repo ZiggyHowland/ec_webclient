@@ -1,7 +1,4 @@
-.sps {
-    width: 90%;
-}
-
-.welcomeDiv {
-    padding-left: 20px;
+Table.dnb-table {
+    width: 70%;
+    min-width: 500px;
 }

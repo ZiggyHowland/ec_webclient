@@ -17,6 +17,7 @@ import Footer from './Footer/Footer';
 import EufemiaExamples from './Eufemia/Examples';
 import User from './User/User';
 import Login from './Login/Login.jsx';
+import About from './About/About';
 
 
 
@@ -66,6 +67,9 @@ function App() {
           <Route path="/eufemia/examples">
             <EufemiaExamples />            
           </Route>
+
+          <Route exact path="/about" component={About} />
+          
 
         </Switch>
         </article>

@@ -5,6 +5,11 @@ class RestClient {
     static baseUrl = getGlobalVariables().rest_base_url;
 
 
+    static getSummary() {
+        return this.doGet_v4("/summary", "");
+    }
+
+
     static getAllConfigurations() {
         const url = `${RestClient.baseUrl}/configurations`;        
         return this.doGet_v2(url, "")
@@ -85,18 +90,10 @@ class RestClient {
 
 
     // READ/FIND/GET (cRud)
-    static async doGet_v2(url, token) {    
-        const response = await fetch(
-            url,
-            {
-                method: "GET",
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authentication': token,
-                },
-            }
-        );
-        return await response.json();
+
+    static async doGet_v4(route, token, returnType) {
+        const url = `${RestClient.baseUrl}${route}`;
+        return this.doGet_v3(url, token, returnType);
     }
 
     static async doGet_v3(url, token, returnType = "json") {    
@@ -119,6 +116,33 @@ class RestClient {
         }
         
     }
+
+
+    static async doGet_v2(url, token) {    
+        const response = await fetch(
+            url,
+            {
+                method: "GET",
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authentication': token,
+                },
+            }
+        );
+        return await response.json();
+    }
+
+    
+    static doGet_v1(url) {
+        const promise1 = fetch(url);
+        const promise2 = promise1.then( response => {                 
+            return response.json();
+        });
+        return promise2;
+    }
+
+
+
 
     // CREATE/INSERT (Crud)
     static async doPost_v2(route, objectToInsert, token) {
@@ -190,14 +214,8 @@ class RestClient {
     
 
 
-    
-    static doGet_v1(url) {
-        const promise1 = fetch(url);
-        const promise2 = promise1.then( response => {                 
-            return response.json();
-        });
-        return promise2;
-    }
+
+
     
 }
 
