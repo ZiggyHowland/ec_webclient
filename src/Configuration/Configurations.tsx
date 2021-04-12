@@ -21,10 +21,12 @@ export default function Configurations() {
         if (thisElement.current) {                                                
            timestamp = thisElement.current.value;
            RestClient.getAllConfigurationsFilteredByDate(timestamp)
-                .then(configs => setConfigs(configs));
-            
+                .then(configs => setConfigs(configs));            
         }
     }
+    // Kjøring av setConfigs-funksjonen oppdaterer komponenten???
+
+
 
     return (
         <div>

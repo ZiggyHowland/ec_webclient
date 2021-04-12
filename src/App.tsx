@@ -18,6 +18,7 @@ import EufemiaExamples from './Eufemia/Examples';
 import User from './User/User';
 import Login from './Login/Login.jsx';
 import About from './About/About';
+import Resources from './Resources/Resources';
 
 
 
@@ -69,6 +70,8 @@ function App() {
           </Route>
 
           <Route exact path="/about" component={About} />
+
+          <Route exact path="/resources" component={Resources} />
           
 
         </Switch>

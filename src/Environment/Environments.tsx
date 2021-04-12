@@ -4,63 +4,91 @@ import RestClient from "../RestClient";
 import './Environment.css';
 import { Anchor } from '@dnb/eufemia/elements'
 import React, { createRef, useState } from 'react';
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
+import Accordion from 'react-bootstrap/Accordion';
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
+import ConfigurationBox from "../Configuration/ConfigurationBox";
+import {Button as ButtonDNB} from "@dnb/eufemia/components";
+import { trash } from '@dnb/eufemia/icons'
+
 
 export default function Environments() {
     let [environments, SetEnvironments] = React.useState([]);
-    //const thisElement = createRef<HTMLDivElement>();
-    const history = useHistory();
 
-    React.useEffect( () => {
+
+    React.useEffect( () => {        
         RestClient.getAllEnvironments()
-        .then(environments => SetEnvironments(environments))
-        .catch(err => alert(err))
+            .then(environments => SetEnvironments(environments))
+            .catch(err => alert(err))
     }, [])
 
-    /*const functiona = () => {
-    } */
 
     //This method receives description.id as a parameter
-    const deleteEnvironment = ({id}:any) => () => {
-        /*const deleteEnvironment = (environment:any) => () => {
-            var id = environment.id; */
-        var msg = `Do you want to delete config with key ${id}`;
+    const deleteEnvironment = (environment: any) => () => {       
+        var msg = `Do you want to delete '${environment.description}'`;
+
         if (window.confirm(msg)) {
-            RestClient.deleteEnvironmentById(id, "")
+            RestClient.deleteEnvironmentById(environment.id, "")
             .then( () => {
-                //history.push("environments"); //Updates URL, but will not refresh
-                window.location.reload(false);
-            /*if (thisElement.current) {
-                thisElement.current.remove();
-            }*/
-        })
-        .catch( (e)=>alert(e) );
-    } 
-}
+                // A new rest call made to update the state of the component: 
+                // TODO: Investigate if better to manipulate environments-variable manually (at frontend)
+                RestClient.getAllEnvironments()
+                    .then( (envs) => SetEnvironments(envs))
+            })
+            .catch( (e)=>alert(e) );
+        } 
+    }
 
 
     return (
         <div id="envBackground">
-            <h1>Environment</h1>
-            <h2 className="envH2">All environments</h2>
-            <button className="envButtonAdd">Add environment</button>
+            <h1>Environments</h1>
+            {/* <button className="envButtonAdd">Add environment</button> */}
 
-            <ul>
+            <Accordion defaultActiveKey="0">
                 {environments.map(
-                    (environment: any, i:number ) =>
-                    //<div ref={thisElement} key={i}>
-                        <li key={i} className="li-frame">
-                            {/* <div className="envKey">{`Key = ${environment.id}`}  */}
-                            {/*<a id="envKey" href={`/environment/${environment.id}`}>{environment.id}</a> */ }
-                            {/* </div> */}
-                            <div className="envValue"><a id="envKey" href={`/environment/${environment.id}`}>{environment.id}</a> {`Name = ${environment.short_name}, description = ${environment.description}`} <button className="envButtonDelete" onClick={deleteEnvironment(environment)}>Delete environment</button></div>
-                             {/*`Key = ${environment.id} : Value = ${environment.short_name}, ${environment.description}` */}
-                        </li> //</div >
+                    (environment: any, i:number ) =>                    
+                        <AddCard key={i} environment={environment} eventKey={i} />                                        
                 )}
-            </ul> 
-            {/*<Environment/>*/}
-            </div>
+            </Accordion>
+        </div>
     )
+
+
+    function AddCard(props:any) {
+        const eventKey = props.environment.id;
+        const environmentId = props.environment.id;
+        const environmentName = props.environment.description;
+
+        return(
+            <Card>
+                <Accordion.Toggle as={Card.Header} eventKey={eventKey}>
+                    {environmentName} - {eventKey}
+                </Accordion.Toggle>
+                <Accordion.Collapse eventKey={eventKey}>
+                    <Card.Body>                        
+                        <Link to={`/environment/${environmentId}`}>
+                            <ButtonDNB
+                                variant="secondary"
+                                text="Open environment details"
+                                icon="chevron_right_medium"
+                                size="large"
+                            />
+                        </Link>
+
+                        <ButtonDNB
+                                variant="secondary"
+                                text="Delete environment"
+                                icon={trash}
+                                size="large"
+                                onClick={deleteEnvironment(props.environment)}
+                        />
+                    </Card.Body>
+                </Accordion.Collapse>
+            </Card>
+        )
+    }
 }
 
 

@@ -18,7 +18,7 @@ export default function Welcome() {
 
     return (
         <div className="summary">            
-            <h2>Summary</h2>
+            <h1>Summary</h1>
             
             <Table className="dnb-table">
                 <thead>

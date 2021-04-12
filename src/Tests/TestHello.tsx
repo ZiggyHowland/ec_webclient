@@ -30,7 +30,7 @@ export default function TestHello(props: any) {
             .catch( (e) => alert("Feil: " + e))
     };
 
-    const showToken = () => {
+    const showToken = () => {        
         const u = sessionStorage.getItem("admin-token");
         alert(u);
     }
