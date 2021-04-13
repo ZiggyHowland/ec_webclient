@@ -14,6 +14,7 @@ import Environment from './Environment/Environment';
 import Configurations from './Configuration/Configurations';
 import ConfigurationAddEdit from './Configuration/ConfigurationAddEdit';
 import Footer from './Footer/Footer';
+import './Footer/Footer.css';
 import EufemiaExamples from './Eufemia/Examples';
 import User from './User/User';
 import Login from './Login/Login.jsx';
@@ -30,9 +31,9 @@ function App() {
 
     <div className="App">
       <Header appname={getGlobalVariables().appname} />
-      <section>
+      <section className="forceFooterDown">
         <Menu />
-
+    
         <article>
         <Switch>
           <Route exact path="/">
@@ -78,7 +79,7 @@ function App() {
         </article>
         </section>
 
-      
+
         <Footer />
       
     </div>
