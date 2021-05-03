@@ -14,6 +14,7 @@
     "@types/react-dom": "^17.0.3",
     "bootstrap": "^4.6.0",
     "cra-template-typescript": "^1.1.2",
+    "env-cmd": "^10.1.0",
     "react": "^17.0.2",
     "react-bootstrap": "^1.5.2",
     "react-dom": "^17.0.2",
@@ -27,7 +28,11 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start:development": "env-cmd -f .env.development react-scripts start",
+    "start:production": "env-cmd -f .env.production react-scripts start",
+    "build:development": "env-cmd -f .env.development react-scripts build",
+    "build:production": "env-cmd -f .env.production react-scripts build",
+    "test": "react-scripts test", 
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

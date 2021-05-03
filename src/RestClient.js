@@ -2,7 +2,8 @@ import { object } from "yup/lib/locale";
 import { getGlobalVariables } from "./environment.js"
 
 class RestClient {
-    static baseUrl = getGlobalVariables().rest_base_url;
+    //static baseUrl = getGlobalVariables().rest_base_url;
+    static baseUrl = process.env.REACT_APP_REST_ENDPOINT;
 
 
     static getSummary() {
