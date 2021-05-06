@@ -21,7 +21,7 @@ Build application: *npm run build:production*
 - Menu/Menu.tsx
 
 ## Deploying front-end to aws:
-###Create s3 bucket on AWS:
+### Create s3 bucket on AWS:
 - On the S3 console in ASW choose *Create bucket*
 - choose region: *EU(Ireland) eu-west-1*
 - In the *Block Public Access settings for this bucket* unflag *Block all public access*
@@ -29,7 +29,7 @@ Build application: *npm run build:production*
 ### Change properties for the bucket:  
 - In the properties for s3 bucket choose *Static website hosting* / *Edit*
 - Enable static web hosting
-- Type index.html for * Index document * and * Error document - optional* Save changes.
+- Type `index.html` for * Index document * and * Error document - optional* Save changes.
 - In the *Permissions *  go to *Access control list (ACL)*/ *Edit*
 - Set a flag for List and Read for *Everyone (public access)* and for *I understand the effects of these changes on my objects and buckets.*
 Page is now public
