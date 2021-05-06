@@ -25,9 +25,7 @@
     "web-vitals": "^1.1.1",
     "yup": "^0.32.9"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+  "scripts": {    
     "start:development": "env-cmd -f .env.development react-scripts start",
     "start:production": "env-cmd -f .env.production react-scripts start",
     "build:development": "env-cmd -f .env.development react-scripts build",
