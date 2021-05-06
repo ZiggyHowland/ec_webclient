@@ -5,9 +5,10 @@ export default function About() {
     return (
 
         <div>
-            <h1>Group SPS</h1>
+            <h1>About S3P</h1>
+            <p>Learning to code is like learning a new language!</p>
             <p>
-                Salim, Petter and Sigbjørn
+                Salim, Petter, Sigbjørn and Svetlana
             </p>
             <img src={sps} className="sps" />
         </div>
